@@ -245,6 +245,8 @@ declare module '@idrisadetunmbi/react-pdf' {
       wrap?: boolean;
       debug?: boolean;
       render?: (props: {
+        subpageNumber: number;
+        totalSubpages: number;
         pageNumber: number;
         totalPages: number;
       }) => React.ReactNode;
