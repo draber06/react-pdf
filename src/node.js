@@ -11,19 +11,20 @@ import {
   Canvas,
   version,
   Document,
+  Svg,
   StyleSheet,
   PDFRenderer,
   createInstance,
 } from './index';
 
-export const renderToStream = async function (element) {
+export const renderToStream = async function(element) {
   const instance = pdf(element);
   const buffer = await instance.toBuffer();
   instance.container.finish();
   return buffer;
 };
 
-export const renderToFile = async function (element, filePath, callback) {
+export const renderToFile = async function(element, filePath, callback) {
   const output = await renderToStream(element);
   const stream = fs.createWriteStream(filePath);
 
@@ -65,6 +66,7 @@ export {
   Link,
   Page,
   Font,
+  Svg,
   Note,
   Image,
   Canvas,
@@ -85,6 +87,7 @@ export default {
   Note,
   Image,
   Canvas,
+  Svg,
   version,
   Document,
   StyleSheet,

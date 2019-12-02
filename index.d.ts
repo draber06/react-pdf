@@ -305,6 +305,26 @@ declare module '@react-pdf/renderer' {
 
     class Canvas extends React.Component<CanvasProps> {}
 
+    interface SvgProps extends NodeProps {}
+
+    class Svg extends React.Component<SvgProps> {
+      debug?: boolean;
+      /**
+       * @see https://github.com/alafr/SVG-to-PDFKit#parameters
+       * 
+       * @type {*}
+       * @memberOf Svg
+       */
+      svgToPdfOptions?: any;
+      /**
+       * Svg element as a string.
+       * 
+       * @type {string}
+       * @memberOf Svg
+       */
+      content: string
+    }
+
     interface BlobProviderParams {
       blob: Blob | null;
       url: string | null;

@@ -13,6 +13,7 @@ const Note = 'NOTE';
 const Image = 'IMAGE';
 const Document = 'DOCUMENT';
 const Canvas = 'CANVAS';
+const Svg = 'SVG';
 
 const pdf = input => {
   const container = createInstance({ type: 'ROOT' });
@@ -71,11 +72,11 @@ const pdf = input => {
 
     return new Promise((resolve, reject) => {
       try {
-        container.instance.on('data', function (buffer) {
+        container.instance.on('data', function(buffer) {
           result += buffer;
         });
 
-        container.instance.on('end', function () {
+        container.instance.on('end', function() {
           callOnRender({ string: result });
           resolve(result);
         });
@@ -106,6 +107,7 @@ export {
   Note,
   Image,
   Document,
+  Svg,
   Canvas,
   StyleSheet,
   createInstance,
